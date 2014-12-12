@@ -65,7 +65,16 @@ var buyBooze = function (beerMoney) {
         return sixPack;
 };
 
-
+// String Function
+var successfulParty = function (drunkGuests) {
+    var beersFinishes = 84;
+        while (beersFinishes > 0) {
+            console.log("Drink up Nick, only " + beersFinishes + " " + booze[3] + "'s left!");
+            beersFinishes--;
+    };
+            var partyComplete = drunkGuests;
+            return partyComplete + ".  He trashed my apartment and drank all of my beer...Best party I've ever been to!"
+};
 
 
 // Main Code
@@ -82,7 +91,11 @@ console.log(booleanReturn + " guests are coming!");
 //number function return
 var openBar = buyBooze(168);
 console.log("Unless Nick Nolte shows up, " + openBar + " six packs of " + booze[3] + " is going to be more than enough.");
+console.log("Holy sh*t, Nolte really showed up at my " + venue[2] + "party!");
 
+//string return
+stringReturn = successfulParty("Nolte's drunk");
+console.log(stringReturn);
 
 
 
