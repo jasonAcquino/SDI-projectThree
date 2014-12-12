@@ -7,7 +7,7 @@
 
 // Global Variables
 var venue = ["Yacht", "House", "Apartment", "Tent"];
-var liquor = ["Vodka", "Rum", "Whiskey", "Beer", "Soda"];
+var booze = ["vodka", "rum", "whiskey", "beer", "soda"];
 
 // Prompt
 var age = prompt("How old are you salior?");
@@ -27,13 +27,14 @@ var partyPlan = function (venuesSearched) {
 };
 
 // Boolean Function
+// venue capacities
 var capacityData = function (json) {
     for (var i = 0; i < json.capacities.length; i++){
         var rightFit = json.capacities[i];
         console.log("The " + rightFit.venue + " has a maximum capacity of " + rightFit.capacity + ".");
     };
 };
-
+            // guests that are coming
             var guestData = function (json2) {
                 for (var i = 0; i < json2.rsvps.length; i++){
                     var guestsComing = json2.rsvps[i];
@@ -41,6 +42,7 @@ var capacityData = function (json) {
                 };
     
             };
+                    // which venue is best for the amount of guests that are definitely coming
                     var perfectVenue = function (guestAmount, capacity) {
                         if (guestAmount <= 10 && capacity <= 10) {
                         console.log("The " + venue[2] + " seems like the best place for this party.");
@@ -50,16 +52,37 @@ var capacityData = function (json) {
                     };
                 
 // Number Function
+var buyBooze = function (beerMoney) {
+    var beerPrices = 12,
+        sixPack;
+        if (beerMoney < beerPrices) {
+            console.log("Our friends are real drinkers, that's not enough " + booze[3] + " money.");
+            sixPack = 0;
+        }
+        else {
+            sixPack = Math.floor(beerMoney / beerPrices);
+        }
+        return sixPack;
+};
 
 
 
 
 // Main Code
+
+//procedure
 partyPlan(true);
+
+//boolean return
 capacityData(json);
 guestData(json2);
 booleanReturn = perfectVenue(10,10);
 console.log(booleanReturn + " guests are coming!");
 
+//number function return
+var openBar = buyBooze(168);
+console.log("Unless Nick Nolte shows up, " + openBar + " six packs of " + booze[3] + " is going to be more than enough.");
 
-    
+
+
+
